@@ -264,6 +264,12 @@ class OLED_1inch3_SPI(framebuf.FrameBuffer):
             return not(self.key1.value())
         else:
             return None
+    
+    def key_0_pressed(self):
+        return not(self.key0.value())
+    
+    def key_1_pressed(self):
+        return not(self.key1.value())
 
     def on(self):
         if not self.is_on:
@@ -296,7 +302,7 @@ class OLED_1inch3_SPI(framebuf.FrameBuffer):
         self.cs(1)
 
     def init_display(self):
-        """Initialize display"""
+        """Initialize dispaly"""
         self.rst(1)
         time.sleep(0.001)
         self.rst(0)
