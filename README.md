@@ -1,6 +1,6 @@
 # MicroPython Driver for the Waveshare Pico OLED 1.3
 
-A MicroPython driver for the [Waveshare Pico-Oled-1.3](https://www.waveshare.com/product/pico-oled-1.3.htm) derived from the one provided by Waveshare, forked from [samveen](https://github.com/samveen/pico-oled-1.3-driver)
+A MicroPython spi driver for the [Waveshare Pico-Oled-1.3](https://www.waveshare.com/product/pico-oled-1.3.htm) derived from the one provided by Waveshare, forked from [samveen](https://github.com/samveen/pico-oled-1.3-driver)
 
 ## Features
 
@@ -16,6 +16,7 @@ Improvements on my fork
 
 - Much faster display updating (improved from ~11hz to ~60hz with a simple loop)
 - Auto clearing of the display between uses of `display.show()`
+- Setting of screen brightness
 
 ## Usage
 
@@ -89,10 +90,11 @@ display.show()
 
 #### Screen Control
 
-| Function  | Arguments | Description                                                                 |
-| --------- | --------- | --------------------------------------------------------------------------- |
-| `clear()` | none      | Clears the screen and immediately updates the display.                      |
-| `show()`  | none      | Sends the framebuffer contents to the display, then clears the framebuffer. |
+| Function           | Arguments        | Description                                                                 |
+| ------------------ | ---------------- | --------------------------------------------------------------------------- |
+| `clear()`          | none             | Clears the screen and immediately updates the display.                      |
+| `show()`           | none             | Sends the framebuffer contents to the display, then clears the framebuffer. |
+| `set_brightness()` | `level`: int 1-5 | Sets the screen brightness to one of five brightness levels (default 3).    |
 
 ---
 
