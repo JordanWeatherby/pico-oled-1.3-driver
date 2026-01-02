@@ -32,16 +32,18 @@ display=PicoOled13.get()
 display.clear()
 
 if display.key_0_pressed():
-    display.text("Key0 pressed",0,0,0xffff)
+    display.text("Key0 pressed",0,0)
 elif display.key_1_pressed():
-    display.text("Key1 pressed",0,0,0xffff)
+    display.text("Key1 pressed",0,0)
 else:
-    display.text("No key pressed",0,0,0xffff)
+    display.text("No key pressed",0,0)
 
 display.show()
 ```
 
-You can directly use any of the commands built into [framebuf](https://docs.micropython.org/en/latest/library/framebuf.html) via the display object, e.g.
+You can directly use any of the commands built into [framebuf](https://docs.micropython.org/en/latest/library/framebuf.html) via the display object. Note that these require passing the colour directly unlike `display.text`
+
+e.g.
 
 ```
 import PicoOled13
